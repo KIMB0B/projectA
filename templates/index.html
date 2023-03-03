@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        TEST SITE
+    </title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <img src="../static/img/mic.png" style="width:100px; height:100px;" onclick="sttStart()"/>
+    <hr>
+    <p id="sttResult"></p>
+    <hr>
+    <p id="kwdResult"></p>
+    <hr>
+    <p id="productResult"></p>
+    <hr>
+</body>
+<script type="text/javascript">
+    const sttStart = () => {
+        axios.get("/getRequest").then((res) => {
+            document.getElementById("sttResult").textContent = "음성인식 요청 내용: " + res.data;
+            axios.get(`/getResponse?req="${res.data}"라는 말에서 가장 중요한 명사 키워드 하나만 골라줘`).then((res) => {
+                document.getElementById("kwdResult").textContent = "살 물건: " + res.data;
+                axios.get(`/getProducts?product=${res.data}`).then((res) => {
+                    document.getElementById("productResult").textContent = "Naver 쇼핑 검색 결과: " + JSON.stringify(res.data)
+                })
+            })
+        })
+    }
+</script>
+</html>
