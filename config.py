@@ -1,0 +1,7 @@
+open_ai_api_key = "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"
+naver_shopping_api_id = "PX031VWN0_YzL72Xfqmz"
+naver_shopping_api_key = "pm0chqWUPi"
+db_user = "nexntech"
+db_password = "nexntech"
+db_host = "localhost"
+db_database = "autoshopper"

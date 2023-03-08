@@ -1,6 +1,7 @@
 import openai
+import config
 
-openai.api_key = "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"
+openai.api_key = config.open_ai_api_key
 
 
 def getResponse(message):
@@ -12,6 +13,5 @@ def getResponse(message):
         messages=[{"role": "user", "content": message}]
     )
 
-    print(response)
     generated_text = response.choices[0].message.content
     return generated_text

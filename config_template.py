@@ -1,0 +1,7 @@
+open_ai_api_key = ""
+naver_shopping_api_id = ""
+naver_shopping_api_key = ""
+db_user = ""
+db_password = ""
+db_host = ""
+db_database = ""
